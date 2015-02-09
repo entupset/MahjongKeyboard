@@ -11,6 +11,4 @@ iOS8 で提供された App Extension (Custom Keyboard) を利用して開発し
 
 ## Requirement
 開発環境
-・XCode 6.1</br>
-・swift</br>
-・StoryBoard 未使用</br>
+・XCode 6.1 / swift / StoryBoard 未使用
