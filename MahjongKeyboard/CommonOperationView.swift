@@ -246,13 +246,10 @@ class CommonOperationView: UIView, ModeChangedDelegate
 		{
 			case HaiInputStringType.simple:
 				imageinputModeButton = UIImage(named: "common_edit_02.png") as UIImage!
-				break
 			case HaiInputStringType.accsiArt1:
 				imageinputModeButton = UIImage(named: "common_edit_03.png") as UIImage!
-				break
 			case HaiInputStringType.accsiArt2:
 				imageinputModeButton = UIImage(named: "common_edit_14.png") as UIImage!
-				break
 			default:
 				break
 		}
@@ -273,10 +270,8 @@ class CommonOperationView: UIView, ModeChangedDelegate
 		{
 			case HaiSortType.sort:
 				imageSortModeButton = UIImage(named: "common_edit_05.png") as UIImage!
-				break
 			case HaiSortType.unsort:
 				imageSortModeButton = UIImage(named: "common_edit_04.png") as UIImage!
-				break
 			default:
 				break
 		}
