@@ -27,6 +27,12 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	
 	let detailAreaOffset:CGFloat = 40
 	
+	init( frame:CGRect , delegate:DetailOperationDelegate )
+	{
+		self.detailOperationDelegate = delegate
+		super.init( frame: frame )
+	}
+	
 	/**
 		初期化処理を行います
 	*/
@@ -346,20 +352,16 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	{
 		switch ( sender.tag )
 		{
-		case 1:
-			self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.ton )
-			break
-		case 2:
-			self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.nan )
-			break
-		case 3:
-			self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.shaa )
-			break
-		case 4:
-			self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.pei )
-			break
-		default:
-			break
+			case 1:
+				self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.ton )
+			case 2:
+				self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.nan )
+			case 3:
+				self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.shaa )
+			case 4:
+				self.detailOperationDelegate.requestChanhgeDetailKaze( DetailKaze.pei )
+			default:
+				break
 		}
 		LogUtility.debug( self, log: "onPushKazeButton")
 	}

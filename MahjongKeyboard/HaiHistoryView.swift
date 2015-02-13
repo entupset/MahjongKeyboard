@@ -22,6 +22,13 @@ class HaiHistoryView: BaseOperationView, UITableViewDelegate, UITableViewDataSou
 	/// テーブルビュー
 	var tableView : UITableView!
 	
+	init( frame:CGRect , delegate:SituationHistoryOperationDelegate )
+	{
+		self.situationHistoryOperationDelegate = delegate
+		super.init( frame: frame )
+	}
+	
+	
 	/**
 		初期化処理を行います
 	*/

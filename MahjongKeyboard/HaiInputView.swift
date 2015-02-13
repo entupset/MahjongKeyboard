@@ -16,6 +16,12 @@ class HaiInputView: BaseOperationView
 	/// 牌入力候補の変更依頼を受け付けるデリゲート
 	var candidateOperationDelegate:CandidateOperationDelegate!
 	
+	init( frame:CGRect , delegate:CandidateOperationDelegate )
+	{
+		self.candidateOperationDelegate = delegate
+		super.init( frame: frame )
+	}
+	
 	/**
 		初期化処理を行います
 	*/
