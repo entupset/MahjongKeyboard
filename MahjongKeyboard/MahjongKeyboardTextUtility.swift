@@ -25,84 +25,84 @@ class MahjongKeyboardTextUtility
 		var haiString = "";
 		switch( haiType )
 		{
-		case HaiType.manzu_1:
-			haiString = "1M";
-		case HaiType.manzu_2:
-			haiString = "2M";
-		case HaiType.manzu_3:
-			haiString = "3M";
-		case HaiType.manzu_4:
-			haiString = "4M";
-		case HaiType.manzu_5:
-			haiString = "5M";
-		case HaiType.manzu_6:
-			haiString = "6M";
-		case HaiType.manzu_7:
-			haiString = "7M";
-		case HaiType.manzu_8:
-			haiString = "8M";
-		case HaiType.manzu_9:
-			haiString = "9M";
-			
-		case HaiType.pinzu_1:
-			haiString = "1P";
-		case HaiType.pinzu_2:
-			haiString = "2P";
-		case HaiType.pinzu_3:
-			haiString = "3P";
-		case HaiType.pinzu_4:
-			haiString = "4P";
-		case HaiType.pinzu_5:
-			haiString = "5P";
-		case HaiType.pinzu_6:
-			haiString = "6P";
-		case HaiType.pinzu_7:
-			haiString = "7P";
-		case HaiType.pinzu_8:
-			haiString = "8P";
-		case HaiType.pinzu_9:
-			haiString = "9P";
-			
-		case HaiType.souzu_1:
-			haiString = "1S";
-		case HaiType.souzu_2:
-			haiString = "2S";
-		case HaiType.souzu_3:
-			haiString = "3S";
-		case HaiType.souzu_4:
-			haiString = "4S";
-		case HaiType.souzu_5:
-			haiString = "5S";
-		case HaiType.souzu_6:
-			haiString = "6S";
-		case HaiType.souzu_7:
-			haiString = "7S";
-		case HaiType.souzu_8:
-			haiString = "8S";
-		case HaiType.souzu_9:
-			haiString = "9S";
-			
-		case HaiType.other_1:
-			haiString = "東";
-		case HaiType.other_2:
-			haiString = "南";
-		case HaiType.other_3:
-			haiString = "西";
-		case HaiType.other_4:
-			haiString = "北";
-		case HaiType.other_5:
-			haiString = "白";
-		case HaiType.other_6:
-			haiString = "発";
-		case HaiType.other_7:
-			haiString = "中";
-		case HaiType.other_8:
-			haiString = "・";
-		case HaiType.other_9:
-			haiString = "裏";
-			
-		default:
-			break
+			case HaiType.manzu_1:
+				haiString = "1M";
+			case HaiType.manzu_2:
+				haiString = "2M";
+			case HaiType.manzu_3:
+				haiString = "3M";
+			case HaiType.manzu_4:
+				haiString = "4M";
+			case HaiType.manzu_5:
+				haiString = "5M";
+			case HaiType.manzu_6:
+				haiString = "6M";
+			case HaiType.manzu_7:
+				haiString = "7M";
+			case HaiType.manzu_8:
+				haiString = "8M";
+			case HaiType.manzu_9:
+				haiString = "9M";
+				
+			case HaiType.pinzu_1:
+				haiString = "1P";
+			case HaiType.pinzu_2:
+				haiString = "2P";
+			case HaiType.pinzu_3:
+				haiString = "3P";
+			case HaiType.pinzu_4:
+				haiString = "4P";
+			case HaiType.pinzu_5:
+				haiString = "5P";
+			case HaiType.pinzu_6:
+				haiString = "6P";
+			case HaiType.pinzu_7:
+				haiString = "7P";
+			case HaiType.pinzu_8:
+				haiString = "8P";
+			case HaiType.pinzu_9:
+				haiString = "9P";
+				
+			case HaiType.souzu_1:
+				haiString = "1S";
+			case HaiType.souzu_2:
+				haiString = "2S";
+			case HaiType.souzu_3:
+				haiString = "3S";
+			case HaiType.souzu_4:
+				haiString = "4S";
+			case HaiType.souzu_5:
+				haiString = "5S";
+			case HaiType.souzu_6:
+				haiString = "6S";
+			case HaiType.souzu_7:
+				haiString = "7S";
+			case HaiType.souzu_8:
+				haiString = "8S";
+			case HaiType.souzu_9:
+				haiString = "9S";
+				
+			case HaiType.other_1:
+				haiString = "東";
+			case HaiType.other_2:
+				haiString = "南";
+			case HaiType.other_3:
+				haiString = "西";
+			case HaiType.other_4:
+				haiString = "北";
+			case HaiType.other_5:
+				haiString = "白";
+			case HaiType.other_6:
+				haiString = "発";
+			case HaiType.other_7:
+				haiString = "中";
+			case HaiType.other_8:
+				haiString = "・";
+			case HaiType.other_9:
+				haiString = "裏";
+				
+			default:
+				break
 		}
 		return haiString
 	}
@@ -117,84 +117,84 @@ class MahjongKeyboardTextUtility
 		var haiString = "";
 		switch( haiType )
 		{
-		case HaiType.manzu_1:
-			haiString = "一";
-		case HaiType.manzu_2:
-			haiString = "二";
-		case HaiType.manzu_3:
-			haiString = "三";
-		case HaiType.manzu_4:
-			haiString = "四";
-		case HaiType.manzu_5:
-			haiString = "五";
-		case HaiType.manzu_6:
-			haiString = "六";
-		case HaiType.manzu_7:
-			haiString = "七";
-		case HaiType.manzu_8:
-			haiString = "八";
-		case HaiType.manzu_9:
-			haiString = "九";
-			
-		case HaiType.pinzu_1:
-			haiString = "一";
-		case HaiType.pinzu_2:
-			haiString = "二";
-		case HaiType.pinzu_3:
-			haiString = "三";
-		case HaiType.pinzu_4:
-			haiString = "四";
-		case HaiType.pinzu_5:
-			haiString = "五";
-		case HaiType.pinzu_6:
-			haiString = "六";
-		case HaiType.pinzu_7:
-			haiString = "七";
-		case HaiType.pinzu_8:
-			haiString = "八";
-		case HaiType.pinzu_9:
-			haiString = "九";
-			
-		case HaiType.souzu_1:
-			haiString = "一";
-		case HaiType.souzu_2:
-			haiString = "二";
-		case HaiType.souzu_3:
-			haiString = "三";
-		case HaiType.souzu_4:
-			haiString = "四";
-		case HaiType.souzu_5:
-			haiString = "五";
-		case HaiType.souzu_6:
-			haiString = "六";
-		case HaiType.souzu_7:
-			haiString = "七";
-		case HaiType.souzu_8:
-			haiString = "八";
-		case HaiType.souzu_9:
-			haiString = "九";
-			
-		case HaiType.other_1:
-			haiString = "東";
-		case HaiType.other_2:
-			haiString = "南";
-		case HaiType.other_3:
-			haiString = "西";
-		case HaiType.other_4:
-			haiString = "北";
-		case HaiType.other_5:
-			haiString = "白";
-		case HaiType.other_6:
-			haiString = "発";
-		case HaiType.other_7:
-			haiString = "中";
-		case HaiType.other_8:
-			haiString = "・";
-		case HaiType.other_9:
-			haiString = "裏";
-			
-		default:
-			break
+			case HaiType.manzu_1:
+				haiString = "一";
+			case HaiType.manzu_2:
+				haiString = "二";
+			case HaiType.manzu_3:
+				haiString = "三";
+			case HaiType.manzu_4:
+				haiString = "四";
+			case HaiType.manzu_5:
+				haiString = "五";
+			case HaiType.manzu_6:
+				haiString = "六";
+			case HaiType.manzu_7:
+				haiString = "七";
+			case HaiType.manzu_8:
+				haiString = "八";
+			case HaiType.manzu_9:
+				haiString = "九";
+				
+			case HaiType.pinzu_1:
+				haiString = "一";
+			case HaiType.pinzu_2:
+				haiString = "二";
+			case HaiType.pinzu_3:
+				haiString = "三";
+			case HaiType.pinzu_4:
+				haiString = "四";
+			case HaiType.pinzu_5:
+				haiString = "五";
+			case HaiType.pinzu_6:
+				haiString = "六";
+			case HaiType.pinzu_7:
+				haiString = "七";
+			case HaiType.pinzu_8:
+				haiString = "八";
+			case HaiType.pinzu_9:
+				haiString = "九";
+				
+			case HaiType.souzu_1:
+				haiString = "一";
+			case HaiType.souzu_2:
+				haiString = "二";
+			case HaiType.souzu_3:
+				haiString = "三";
+			case HaiType.souzu_4:
+				haiString = "四";
+			case HaiType.souzu_5:
+				haiString = "五";
+			case HaiType.souzu_6:
+				haiString = "六";
+			case HaiType.souzu_7:
+				haiString = "七";
+			case HaiType.souzu_8:
+				haiString = "八";
+			case HaiType.souzu_9:
+				haiString = "九";
+				
+			case HaiType.other_1:
+				haiString = "東";
+			case HaiType.other_2:
+				haiString = "南";
+			case HaiType.other_3:
+				haiString = "西";
+			case HaiType.other_4:
+				haiString = "北";
+			case HaiType.other_5:
+				haiString = "白";
+			case HaiType.other_6:
+				haiString = "発";
+			case HaiType.other_7:
+				haiString = "中";
+			case HaiType.other_8:
+				haiString = "・";
+			case HaiType.other_9:
+				haiString = "裏";
+				
+			default:
+				break
 		}
 		return haiString
 	}
@@ -276,20 +276,16 @@ class MahjongKeyboardTextUtility
 		var outputString = ""
 		switch( detailKaze )
 		{
-		case DetailKaze.ton:
-			outputString += "東"
-			break
-		case DetailKaze.nan:
-			outputString += "南"
-			break
-		case DetailKaze.shaa:
-			outputString += "西"
-			break
-		case DetailKaze.pei:
-			outputString += "北"
-			break
-		default:
-			break
+			case DetailKaze.ton:
+				outputString += "東"
+			case DetailKaze.nan:
+				outputString += "南"
+			case DetailKaze.shaa:
+				outputString += "西"
+			case DetailKaze.pei:
+				outputString += "北"
+			default:
+				break
 		}
 		outputString += "場"
 		return outputString
@@ -307,7 +303,7 @@ class MahjongKeyboardTextUtility
 	
 	/**
 		局の詳細オン・オフの見出しを取得する
-	@return 対応する見出し文字列
+		@return 対応する見出し文字列
 	*/
 	class func getDetailString( isDetail:Bool ) -> String
 	{
@@ -324,13 +320,13 @@ class MahjongKeyboardTextUtility
 	}
 	
 	/**
-	入力モード(通常)における文字列を、同一カテゴリ内は省略して返します
-	例えば、萬子は 1M2M3M ではなく 123M とします
-	situation.haiList はソートされている前提です
-	
-	@param  situation 対象の入力状態
-	@param  haiSortType 自動整列するか否か
-	@return 画面入力する文字列
+		入力モード(通常)における文字列を、同一カテゴリ内は省略して返します
+		例えば、萬子は 1M2M3M ではなく 123M とします
+		situation.haiList はソートされている前提です
+		
+		@param  situation 対象の入力状態
+		@param  haiSortType 自動整列するか否か
+		@return 画面入力する文字列
 	*/
 	class func getInputStringSimpleOmission( situation:MahjongSituation ) -> String
 	{
@@ -412,10 +408,10 @@ class MahjongKeyboardTextUtility
 	}
 	
 	/**
-	入力モード(通常)における文字列を、ソートせず生成して返します
-	@param  situation 対象の入力状態
-	@param  haiSortType 自動整列するか否か
-	@return 画面入力する文字列
+		入力モード(通常)における文字列を、ソートせず生成して返します
+		@param  situation 対象の入力状態
+		@param  haiSortType 自動整列するか否か
+		@return 画面入力する文字列
 	*/
 	class func getInputStringSimple( situation:MahjongSituation ) -> String
 	{
@@ -439,9 +435,9 @@ class MahjongKeyboardTextUtility
 	}
 	
 	/**
-	入力モード(アスキーアート1)における文字列を生成して返します
-	@param  situation 対象の入力状態
-	@return 画面入力する文字列
+		入力モード(アスキーアート1)における文字列を生成して返します
+		@param  situation 対象の入力状態
+		@return 画面入力する文字列
 	*/
 	class func getInputStringAssciArt1( situation:MahjongSituation  ) -> String!
 	{
@@ -470,9 +466,9 @@ class MahjongKeyboardTextUtility
 	}
 	
 	/**
-	入力モード(アスキーアート2)における文字列を生成して返します
-	@param  situation 対象の入力状態
-	@return 画面入力する文字列
+		入力モード(アスキーアート2)における文字列を生成して返します
+		@param  situation 対象の入力状態
+		@return 画面入力する文字列
 	*/
 	class func getInputStringAssciArt2( situation:MahjongSituation ) -> String!
 	{
@@ -548,8 +544,8 @@ class MahjongKeyboardTextUtility
 	
 	/**
 		麻雀用語群を取得する
-	@return 麻雀用語群
-	@note 用語入力で使用
+		@return 麻雀用語群
+		@note 用語入力で使用
 	*/
 	class func getMahjongDictonary() -> Array<String>
 	{

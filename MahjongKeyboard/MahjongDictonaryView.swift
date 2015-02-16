@@ -19,6 +19,13 @@ class MahjongDictonaryView: BaseOperationView
 	/// 用語ボタン群
 	var mahjongDictonaryWord:Array<String> = []
 	
+	init( frame:CGRect , delegate:CommonOperationDelegate )
+	{
+		self.commonOperationDelegate = delegate
+		super.init( frame: frame )
+	}
+	
+	
 	/**
 		初期化処理を行います
 	*/

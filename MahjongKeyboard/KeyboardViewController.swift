@@ -260,27 +260,17 @@ class KeyboardViewController: UIInputViewController, InputViewChangeDelegate, Cu
 		switch(baseOperationViewType)
 		{
 			case BaseOperationViewType.operationHaiInputView:
-				var view:HaiInputView = HaiInputView(frame: rectInputView)
-				view.candidateOperationDelegate = self.controller
-				baseOperationView = view
-				break
+				baseOperationView = HaiInputView( frame: rectInputView, delegate:self.controller)
 			case BaseOperationViewType.operationWiktionaryDetailView:
-				var view:WiktionaryDetailView = WiktionaryDetailView(frame: rectInputView)
-				view.detailOperationDelegate = self.controller
+				var view:WiktionaryDetailView = WiktionaryDetailView( frame: rectInputView, delegate:self.controller )
 				baseOperationView = view
 				self.controller.detailChangedDelegate = view
-				break
 			case BaseOperationViewType.operationHaiHistoryView:
-				var view:HaiHistoryView = HaiHistoryView(frame: rectInputView)
-				view.situationHistoryOperationDelegate = self.controller
+				var view:HaiHistoryView = HaiHistoryView( frame: rectInputView, delegate: self.controller )
 				baseOperationView = view
 				self.controller.situationHistoryChangedDelegate = view
-				break
 			case BaseOperationViewType.operationMahjongDictonaryView:
-				var view:MahjongDictonaryView = MahjongDictonaryView(frame: rectInputView)
-				view.commonOperationDelegate = self.controller
-				baseOperationView = view
-				break
+				baseOperationView = MahjongDictonaryView( frame: rectInputView, delegate:self.controller )
 			default:
 				LogUtility.fatal( self, log: "createOperationView invalid viewtype ")
 				break

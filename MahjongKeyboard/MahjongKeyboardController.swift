@@ -55,13 +55,10 @@ class MahjongKeyboardController :
 		{
 			case HaiInputStringType.simple:
 				self.haiinputStringType = HaiInputStringType.accsiArt1
-				break
 			case HaiInputStringType.accsiArt1:
 				self.haiinputStringType = HaiInputStringType.accsiArt2
-				break
 			case HaiInputStringType.accsiArt2:
 				self.haiinputStringType = HaiInputStringType.simple
-				break
 			default:
 				break
 		}
