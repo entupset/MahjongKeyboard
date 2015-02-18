@@ -316,7 +316,7 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 	/// 局の詳細 局目
 	var detailKyokume:Int32 = 1
 
-	/// 局の詳細 順目
+	/// 局の詳細 巡目
 	var detailJunme:Int32 = 1
 
 	/// 局の詳細 ドラ
