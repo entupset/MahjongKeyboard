@@ -322,6 +322,9 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 	/// 局の詳細 ドラ
 	var detailDora:Hai = Hai( _haiType: HaiType.manzu_1, _isRed: false )
 
+	/// 局の詳細 ツモ牌 (v1.1以降)
+	var detailTsumo:Hai = Hai( _haiType: HaiType.manzu_1, _isRed: false )
+	
 	//シリアライズ用識別子
 	let typename_haiList = "haiList"
 	let typename_isDetailOutput = "isDetailOutput"
@@ -329,6 +332,7 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 	let typename_detailKyokume = "detailKyokume"
 	let typename_detailJunme = "detailJunme"
 	let typename_detailDora = "detailDora"
+	let typename_detailTsumo = "detailTsumo"
 	
 	override init()
 	{
@@ -349,7 +353,13 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 		self.detailKyokume = decoder.decodeIntForKey( self.typename_detailKyokume )
 		self.detailJunme = decoder.decodeIntForKey( self.typename_detailJunme )
 
-		self.detailDora = decoder.decodeObjectForKey( self.typename_detailDora ) as  Hai
+		self.detailDora = decoder.decodeObjectForKey( self.typename_detailDora ) as Hai
+
+		// v1.1 以降追加パラメータ
+		if let detailTsumoLoad = decoder.decodeObjectForKey( self.typename_detailTsumo ) as Hai?
+		{
+			self.detailTsumo = detailTsumoLoad
+		}
 	}
 	
 	/**
@@ -365,6 +375,7 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 		coder.encodeInt( self.detailKyokume, forKey: self.typename_detailKyokume )
 		coder.encodeInt( self.detailJunme, forKey: self.typename_detailJunme )
 		coder.encodeObject( self.detailDora, forKey: self.typename_detailDora )
+		coder.encodeObject( self.detailTsumo, forKey: self.typename_detailTsumo )
 	}
 	
 	/**
@@ -386,6 +397,7 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 		newInstance.detailKyokume = self.detailKyokume
 		newInstance.detailJunme = self.detailJunme
 		newInstance.detailDora = self.detailDora
+		newInstance.detailTsumo = self.detailTsumo
 		return newInstance
 	}
 	
@@ -419,7 +431,8 @@ class MahjongSituation : NSObject, NSCoding, NSCopying
 		println("detailKaze \(self.detailKaze)")
 		println("detailKyokume \(self.detailKyokume)")
 		println("detailJunme \(self.detailJunme)")
-		println("detailDora \(self.detailDora)")
+		println("detailDora \(self.detailDora.haiType.rawValue)")
+		println("detailTsumo \(self.detailTsumo.haiType.rawValue)")
 		
 		println("haiList count \(self.haiList.count)")
 		for (index, hai) in enumerate(self.haiList)

@@ -22,10 +22,11 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	var kyokumeLabel:UILabel!		//!< 局目 表示ラベル
 	var junmeLabel:UILabel!			//!< 順目 表示ラベル
 	var daraButton:UIButton!		//!< ドラ 表示兼切り替えボタン
+	var tsumoButton:UIButton!		//!< ツモ牌 表示兼切り替えボタン
 	var viewGray:UIView!			//!< 局の詳細入力 無効時にかぶせるグレー部分
 	var isFirst = true				//!< 初回表示フラグ
 	
-	let detailAreaOffset:CGFloat = 40
+	let detailAreaOffset:CGFloat = 30
 	
 	init( frame:CGRect , delegate:DetailOperationDelegate )
 	{
@@ -48,6 +49,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		self.setupKyokume()				//局目
 		self.setupJunme()				//順目
 		self.setupDora()				//ドラ
+		self.setupTsumo()				//ツモ牌
 		self.setupDetailDisableView()	//局の詳細入力 無効時にかぶせるグレー部分
 
 		// スワイプ設定
@@ -68,8 +70,8 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		let stripe1 = UIColor.hexStr("d3d3d3", alpha: 1)
 		let stripe2 = UIColor.hexStr("e3e3e3", alpha: 1)
 
-		// 一番上のエリア(チェックボックスとドラ選択)
-		let backGoroundOnOffHeight:CGFloat = 40
+		// 一番上のエリア(チェックボックス)
+		let backGoroundOnOffHeight:CGFloat = 30
 		let backGoroundOnOffViewRect = CGRect(
 			x: 0, y: 0,
 			width: self.frame.width,
@@ -91,7 +93,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		self.addSubview( backGoroundKaze )
 
 		// 順目選択のエリア
-		let backGoroundJunmeHeight:CGFloat = 30
+		let backGoroundJunmeHeight:CGFloat = 40
 		let backGoroundJunmeViewRect = CGRect(
 			x: 0, y: backGoroundOnOffHeight + backGoroundKazeHeight,
 			width: self.frame.width,
@@ -120,7 +122,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 			forControlEvents: .TouchUpInside)
 		
 		let btnLeft:CGFloat = 20
-		let btnTop:CGFloat  = 8
+		let btnTop:CGFloat  = 3
 		
 		Layout.addSubView(self.detailOnOffButton, superview: self )
 			.top(btnTop).fromSuperviewTop()
@@ -129,7 +131,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		//ラベルの生成
 		self.detailOnOffLabel = UILabel()
 		let lebalLeft:CGFloat = 54
-		let lebalTop:CGFloat  = 10
+		let lebalTop:CGFloat  = 5
 		
 		Layout.addSubView(self.detailOnOffLabel, superview: self )
 			.top(lebalTop).fromSuperviewTop()
@@ -168,7 +170,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 			let kazeButtonLeft:CGFloat = kazeButtonLeftMargin +
 					( CGFloat( haiIndex - 1 ) * ( haiImageSize.width + kazeButtonInterval ) )
 
-			let kazeButtonTop:CGFloat  = 42
+			let kazeButtonTop:CGFloat  = 32
 			
 			Layout.addSubView(kazeButton, superview: self )
 				.top(kazeButtonTop).fromSuperviewTop()
@@ -177,8 +179,8 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		
 		//ラベルの生成
 		self.kazeLabel = UILabel()
-		let lebalLeft:CGFloat = 158
-		let lebalTop:CGFloat  = 52
+		let lebalLeft:CGFloat = 150
+		let lebalTop:CGFloat  = 42
 		
 		Layout.addSubView(self.kazeLabel, superview: self )
 			.top(lebalTop).fromSuperviewTop()
@@ -214,7 +216,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 			let kyokumeButtonLeft:CGFloat = kyokumeButtonLeftMargin +
 					( CGFloat( haiIndex - 1 ) * ( numberImageSize.width + kyokumeButtonInterval ) )
 
-			let kyokumeButtonTop:CGFloat  = 83
+			let kyokumeButtonTop:CGFloat  = 78
 			
 			Layout.addSubView(kyokumeButton, superview: self )
 				.top(kyokumeButtonTop).fromSuperviewTop()
@@ -223,8 +225,8 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 
 		//ラベルの生成
 		self.kyokumeLabel = UILabel()
-		let lebalLeft:CGFloat = 160
-		let lebalTop:CGFloat  = 85
+		let lebalLeft:CGFloat = 152
+		let lebalTop:CGFloat  = 80
 		
 		Layout.addSubView(self.kyokumeLabel, superview: self )
 			.top(lebalTop).fromSuperviewTop()
@@ -299,8 +301,8 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 			action: Selector("onPushDara"),
 			forControlEvents: .TouchUpInside)
 		
-		let buttonLeft:CGFloat = 250
-		let buttonTop:CGFloat  = 42
+		let buttonLeft:CGFloat = 245
+		let buttonTop:CGFloat  = 32
 		
 		Layout.addSubView(self.daraButton!, superview: self )
 			.top( buttonTop ).fromSuperviewTop()
@@ -308,8 +310,8 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 
 		//ラベルの生成
 		var doraLabel = UILabel()
-		let lebalLeft:CGFloat = 210
-		let lebalTop:CGFloat  = 52
+		let lebalLeft:CGFloat = 205
+		let lebalTop:CGFloat  = 42
 		
 		doraLabel.text = "ドラ"
 		Layout.addSubView(doraLabel, superview: self )
@@ -318,6 +320,40 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 
 		LogUtility.debug( self, log: "setupDora")
 	}
+	
+	/**
+		ツモ牌関連のボタン・ラベルを生成します
+	*/
+	private func setupTsumo()
+	{
+		//ボタンの生成
+		self.tsumoButton = UIButton()
+		self.tsumoButton!.addTarget(
+			self,
+			action: Selector("onPushTsumo"),
+			forControlEvents: .TouchUpInside)
+		
+		let buttonLeft:CGFloat = 245
+		let buttonTop:CGFloat  = 72
+		
+		Layout.addSubView(self.tsumoButton!, superview: self )
+			.top( buttonTop ).fromSuperviewTop()
+			.left( buttonLeft ).fromSuperviewLeft()
+		
+		//ラベルの生成
+		var tsumoLabel = UILabel()
+		let lebalLeft:CGFloat = 207
+		let lebalTop:CGFloat  = 80
+		
+		tsumoLabel.text = "ツモ"
+		Layout.addSubView(tsumoLabel, superview: self )
+			.top(lebalTop).fromSuperviewTop()
+			.left(lebalLeft).fromSuperviewLeft()
+		
+		LogUtility.debug( self, log: "setupTsumo")
+	}
+	
+	
 	
 	/**
 		局の詳細入力 無効時にかぶせるグレー部分を生成します
@@ -395,7 +431,26 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	*/
 	func onPushDara()
 	{
-		//ドラ選択ビュー表示
+		self.showHaiSelectView( HaiSelectMode.Dora )
+		LogUtility.debug( self, log: "onPushDara")
+	}
+	
+	/**
+		ツモ牌変更ボタン押下時に呼ばれます
+	*/
+	func onPushTsumo()
+	{
+		self.showHaiSelectView( HaiSelectMode.Tsumo )
+		LogUtility.debug( self, log: "onPushTsumo")
+	}
+	
+	/**
+		牌選択ビューを表示します
+		@param  selectMode  選択モード
+	*/
+	private func showHaiSelectView( selectMode:HaiSelectMode )
+	{
+		//ツモ選択ビュー表示
 		let candidateViewHeight:CGFloat   = HaiCandidateView.getViewHeight()
 		let inputViewHeight:CGFloat		  = BaseOperationView.getViewHeight()
 		let commonOperationHeight:CGFloat = CommonOperationView.getViewHeight()
@@ -406,8 +461,11 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 			width: self.frame.width,
 			height: self.frame.height + commonOperationHeight)
 		
-		var view:WiktionaryDetailDoraSelectView = WiktionaryDetailDoraSelectView(frame: viewRect)
-		view.detailOperationDelegate = self.detailOperationDelegate
+		var view:WiktionaryDetailDoraSelectView =
+		WiktionaryDetailDoraSelectView(
+			viewRect: viewRect,
+			selectMode:selectMode,
+			operationDelegate: self.detailOperationDelegate )
 		view.backgroundColor = UIColor.hexStr("e3e3e3", alpha: 1)
 		
 		self.addSubview( view )
@@ -428,8 +486,9 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 				// nop
 			}
 		)
-		LogUtility.debug( self, log: "onPushDara")
+		LogUtility.debug( self, log: "showHiaSelectView")
 	}
+	
 	
 	/**
 		局の詳細入力 有効・無効 状態変更時に呼ばれます
@@ -565,5 +624,18 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		LogUtility.debug( self, log: "changedDora")
 	}
 	
+	/**
+		ツモ牌の変更時に呼ばれます
+		@param  hai 変更後のツモ牌
+		@see DetailChangedDelegate
+	*/
+	func changedTsumo( hai:Hai )
+	{
+		let resourceName :String = hai.getResourceName()
+		let image = UIImage(named: resourceName) as UIImage!
+		self.tsumoButton!.setImage(image, forState: .Normal)
+
+		LogUtility.debug( self, log: "changedTsumo")
+	}
 
 }

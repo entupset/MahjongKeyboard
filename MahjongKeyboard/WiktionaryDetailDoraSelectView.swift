@@ -9,12 +9,31 @@
 import UIKit
 
 /**
-	ドラ選択ビュー
+	局の詳細情報 風
+*/
+enum HaiSelectMode : Int
+{
+	case Dora	//!< ドラ選択
+	case Tsumo	//!< ツモ選択
+}
+
+/**
+	牌選択ビュー
 */
 class WiktionaryDetailDoraSelectView: BaseHaiSelectView
 {
+	/// 選択モード
+	let haiSelectMode:HaiSelectMode = HaiSelectMode.Dora
+	
 	/// 局詳細の変更依頼を受け付けるデリゲート
-	var detailOperationDelegate:DetailOperationDelegate!
+	let detailOperationDelegate:DetailOperationDelegate!
+	
+	init( viewRect: CGRect, selectMode:HaiSelectMode, operationDelegate:DetailOperationDelegate )
+	{
+		self.haiSelectMode = selectMode
+		self.detailOperationDelegate = operationDelegate
+		super.init( frame:viewRect )
+	}
 	
 	/**
 		画面描画時に呼ばれます
@@ -35,7 +54,15 @@ class WiktionaryDetailDoraSelectView: BaseHaiSelectView
 		// ドラの変更を依頼
 		let haiType:HaiType = HaiType( rawValue: sender.tag )!
 		let hai = Hai( _haiType:haiType, _isRed:false )
-		self.detailOperationDelegate.requestChanhgeDetailDora( hai )
+		
+		if( self.haiSelectMode == HaiSelectMode.Dora )
+		{
+			self.detailOperationDelegate.requestChanhgeDetailDora( hai )
+		}
+		else if( self.haiSelectMode == HaiSelectMode.Tsumo )
+		{
+			self.detailOperationDelegate.requestChanhgeDetailTsumo( hai )
+		}
 
 		// 自身を閉じるアニメーショ開始
 		self.center = CGPoint(
