@@ -196,7 +196,19 @@ class MahjongKeyboardController :
 		self.detailChangedDelegate.changedDora( self.model.cueerntEditing.detailDora )
 		LogUtility.debug( self, log: "requestChanhgeDetailDora")
 	}
-	
+
+	/**
+		ツモ牌の変更要求時に呼ばれます
+		@param hai 変更するドラ
+		@see DetailOperationDelegate
+	*/
+	func requestChanhgeDetailTsumo( hai:Hai )
+	{
+		self.model.cueerntEditing.detailTsumo = hai
+		self.detailChangedDelegate.changedTsumo( self.model.cueerntEditing.detailTsumo )
+		LogUtility.debug( self, log: "requestChanhgeDetailTsumo")
+	}
+
 	/**
 		現在の局詳細情報 取得要求時に呼ばれます
 		@see DetailOperationDelegate
@@ -208,6 +220,7 @@ class MahjongKeyboardController :
 		self.detailChangedDelegate.changedKyokume( self.model.cueerntEditing.detailKyokume )
 		self.detailChangedDelegate.changedJunme( self.model.cueerntEditing.detailJunme )
 		self.detailChangedDelegate.changedDora( self.model.cueerntEditing.detailDora )
+		self.detailChangedDelegate.changedTsumo( self.model.cueerntEditing.detailTsumo )
 	}
 
 	/**

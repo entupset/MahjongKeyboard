@@ -11,7 +11,7 @@ import Foundation
 /**
 	表示文字列の変換処理をまとめたユーティリティクラス
 
-@note 表示する文字はこのクラスにまとめて、他のクラスでハードコードしないこと
+	@note 表示する文字はこのクラスにまとめて、他のクラスでハードコードしないこと
 */
 class MahjongKeyboardTextUtility
 {
@@ -201,8 +201,8 @@ class MahjongKeyboardTextUtility
 	
 	/**
 		アスキーアート入力に対応する、牌のカテゴリ文字列を取得する
-	@param  牌の種別
-	@return 牌の文字列
+		@param  牌の種別
+		@return 牌の文字列
 	*/
 	class func getAssciArtBottomString( haiType:HaiType ) -> String
 	{
@@ -251,7 +251,7 @@ class MahjongKeyboardTextUtility
 	
 	/**
 		局の詳細文字列を取得する
-	@return 局の詳細文字列
+		@return 局の詳細文字列
 	*/
 	class func getOutputDetail( situation:MahjongSituation) -> String
 	{
@@ -261,15 +261,17 @@ class MahjongKeyboardTextUtility
 			situation.detailKyokume, situation.detailJunme)
 		
 		outputString += "ドラ" + MahjongKeyboardTextUtility.getSimpleString( situation.detailDora.haiType )
+		outputString += " "
+		outputString += "ツモ" + MahjongKeyboardTextUtility.getSimpleString( situation.detailTsumo.haiType )
 		outputString += "\n"
-		
+
 		return outputString
 	}
 	
 	/**
 		風の文字列を取得する
-	@param  風の種別
-	@return 風の文字列
+		@param  風の種別
+		@return 風の文字列
 	*/
 	class func getKazeString( detailKaze:DetailKaze ) -> String
 	{

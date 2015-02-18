@@ -83,6 +83,11 @@ protocol DetailOperationDelegate
 	*/
 	func requestChanhgeDetailDora(hai:Hai)
 	/**
+		ツモ牌の変更要求時に呼ばれます
+		@param hai 変更するツモ牌
+	*/
+	func requestChanhgeDetailTsumo(hai:Hai)
+	/**
 		現在の局詳細情報 取得要求時に呼ばれます
 	*/
 	func requestCurrentDetail()
@@ -120,6 +125,12 @@ protocol DetailChangedDelegate
 		@param  hai 変更後のドラ
 	*/
 	func changedDora( hai:Hai )
+
+	/**
+		ツモ牌の変更時に呼ばれます
+		@param  hai 変更後のドラ
+	*/
+	func changedTsumo( hai:Hai )
 }
 
 /// 入力履歴の詳細の変更依頼を受け付けるデリゲート
