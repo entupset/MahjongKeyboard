@@ -20,7 +20,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	var detailOnOffLabel:UILabel!   //!< 局の詳細入力 有効・無効 状態表示ラベル
 	var kazeLabel:UILabel!          //!< 風表示ラベル
 	var kyokumeLabel:UILabel!		//!< 局目 表示ラベル
-	var junmeLabel:UILabel!			//!< 順目 表示ラベル
+	var junmeLabel:UILabel!			//!< 巡目 表示ラベル
 	var daraButton:UIButton!		//!< ドラ 表示兼切り替えボタン
 	var tsumoButton:UIButton!		//!< ツモ牌 表示兼切り替えボタン
 	var viewGray:UIView!			//!< 局の詳細入力 無効時にかぶせるグレー部分
@@ -47,7 +47,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		self.setupDetailOnOffButton()	//詳細出力
 		self.setupKaze()				//風
 		self.setupKyokume()				//局目
-		self.setupJunme()				//順目
+		self.setupJunme()				//巡目
 		self.setupDora()				//ドラ
 		self.setupTsumo()				//ツモ牌
 		self.setupDetailDisableView()	//局の詳細入力 無効時にかぶせるグレー部分
@@ -92,7 +92,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 		backGoroundKaze.backgroundColor = stripe1
 		self.addSubview( backGoroundKaze )
 
-		// 順目選択のエリア
+		// 巡目選択のエリア
 		let backGoroundJunmeHeight:CGFloat = 40
 		let backGoroundJunmeViewRect = CGRect(
 			x: 0, y: backGoroundOnOffHeight + backGoroundKazeHeight,
@@ -236,7 +236,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	}
 	
 	/**
-		順目 関連のボタン・ラベルを生成します
+		巡目 関連のボタン・ラベルを生成します
 	*/
 	private func setupJunme()
 	{
@@ -415,7 +415,7 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	}
 	
 	/**
-		順目ボタン押下時に呼ばれます
+		巡目ボタン押下時に呼ばれます
 		@param sender 押下されたボタン
 	*/
 	func onPushJunmeButton( sender: UIButton! )
@@ -600,8 +600,8 @@ class WiktionaryDetailView: BaseOperationView, DetailChangedDelegate
 	}
 
 	/**
-		順目の変更時に呼ばれます
-		@param  junme 変更後の順目
+		巡目の変更時に呼ばれます
+		@param  junme 変更後の巡目
 		@see DetailChangedDelegate
 	*/
 	func changedJunme( junme:Int32 )

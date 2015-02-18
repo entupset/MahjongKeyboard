@@ -257,7 +257,7 @@ class MahjongKeyboardTextUtility
 	{
 		var outputString = MahjongKeyboardTextUtility.getKazeString( situation.detailKaze )
 		
-		outputString += NSString(format: " %d 局目 %d 順目",
+		outputString += NSString(format: " %d 局目 %d 巡目",
 			situation.detailKyokume, situation.detailJunme)
 		
 		outputString += "ドラ" + MahjongKeyboardTextUtility.getSimpleString( situation.detailDora.haiType )
@@ -300,7 +300,7 @@ class MahjongKeyboardTextUtility
 	
 	class func getJunmeString( junme:Int32 ) -> String
 	{
-		return NSString(format: "%d 順目", junme)
+		return NSString(format: "%d 巡目", junme)
 	}
 	
 	/**

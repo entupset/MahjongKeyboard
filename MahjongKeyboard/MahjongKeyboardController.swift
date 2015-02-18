@@ -173,8 +173,8 @@ class MahjongKeyboardController :
 	}
 	
 	/**
-		順目の変更要求時に呼ばれます
-		@param junme 変更する順目
+		巡目の変更要求時に呼ばれます
+		@param junme 変更する巡目
 		@see DetailOperationDelegate
 	*/
 	func requestChanhgeDetailJunme( junme:Int32 )

@@ -73,8 +73,8 @@ protocol DetailOperationDelegate
 	*/
 	func requestChanhgeDetailKyokume(kyokume:Int32)
 	/**
-		順目の変更要求時に呼ばれます
-		@param junme 変更する順目
+		巡目の変更要求時に呼ばれます
+		@param junme 変更する巡目
 	*/
 	func requestChanhgeDetailJunme(junme:Int32)
 	/**
@@ -115,8 +115,8 @@ protocol DetailChangedDelegate
 	func changedKyokume( kyokume:Int32 )
 
 	/**
-		順目の変更時に呼ばれます
-		@param  junme 変更後の順目
+		巡目の変更時に呼ばれます
+		@param  junme 変更後の巡目
 	*/
 	func changedJunme( junme:Int32 )
 

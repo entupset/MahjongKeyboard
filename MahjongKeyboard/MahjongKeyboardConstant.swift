@@ -34,7 +34,7 @@ class MahjongKeyboardConstant
 	}
 	
 	/**
-		数字ボタン(局目・順目 の指定用)の画像サイズを返す
+		数字ボタン(局目・巡目 の指定用)の画像サイズを返す
 		@return 画像サイズ
 	*/
 	class func getNumberButtonImageSize() -> CGSize
