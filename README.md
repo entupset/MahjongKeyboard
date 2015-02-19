@@ -10,3 +10,6 @@ iOS8 で提供された App Extension (Custom Keyboard) を利用して開発し
 
 ## Requirement
 XCode 6.1 / swift / StoryBoard 未使用
+
+## Document
+http://entupset.hatenablog.com/entry/MahjongKeyboard
