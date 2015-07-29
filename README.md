@@ -3,7 +3,7 @@
 
 麻雀牌に対応する文字を入力する iPhone 向けキーボードアプリです。 
 
-現在 App Store にてレビュー中です。
+https://itunes.apple.com/us/app/ma-quekibodo/id961053412?l=ja&ls=1&mt=8
 
 ## Description
 iOS8 で提供された App Extension (Custom Keyboard) を利用して開発しました。
